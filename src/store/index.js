@@ -15,6 +15,14 @@ export default createStore({
       if (item) return item.quantity;
       else return null;
     },
+
+    totalCartItems(state) {
+      return state.cart;
+    },
+
+    totalPrice(state) {
+      return state.cart.reduce((a, b) => a + b.price * b.quantity, 0);
+    },
   },
   mutations: {
     addProduct(state, product) {

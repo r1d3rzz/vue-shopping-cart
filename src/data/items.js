@@ -24,7 +24,7 @@ const items = [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia porro assumenda quibusdam fuga incidunt? Voluptate eaque officia blanditiis at reiciendis assumenda, facere sunt debitis culpa ullam ex. Omnis, perspiciatis sit.",
   },
   {
-    id: 1,
+    id: 4,
     name: "Spaceship",
     price: 18.0,
     category: "Toy",

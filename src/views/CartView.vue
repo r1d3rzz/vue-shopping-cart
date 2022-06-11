@@ -1,11 +1,26 @@
 <template>
   <div class="cart">
-    <h2>This is Cart Page</h2>
+    <SingleCartItems
+      v-for="product in items"
+      :key="product.id"
+      :product="product"
+    />
+    <TotalPrice />
   </div>
 </template>
 
 <script>
-export default {};
+import SingleCartItems from "./SingleCartItems.vue";
+import TotalPrice from "@/components/TotalPrice.vue";
+
+export default {
+  components: { SingleCartItems, TotalPrice },
+  computed: {
+    items() {
+      return this.$store.getters.totalCartItems;
+    },
+  },
+};
 </script>
 
 <style>
