@@ -6,16 +6,23 @@
       {{ description }}
     </p>
     <h3>${{ product.price.toFixed(2) }}</h3>
-    <button class="viewBtn">View Product</button>
+    <button class="viewBtn" @click="viewProduct(product)">View Product</button>
   </div>
 </template>
 
 <script>
 export default {
   props: ["product"],
+  components: {},
   computed: {
     description() {
       return this.product.description.substring(0, 100);
+    },
+  },
+
+  methods: {
+    viewProduct(product) {
+      this.$emit("viewproduct", product);
     },
   },
 };
