@@ -22,8 +22,8 @@
         <h3>In Cart : {{ totalProduct }}</h3>
       </div>
 
-      <button>Remove</button>
-      <button>Add</button>
+      <button @click="removeCart()">Remove</button>
+      <button @click="addToCart()">Add</button>
     </div>
   </div>
 </template>
@@ -38,13 +38,19 @@ export default {
 
   computed: {
     totalProduct() {
-      return 52;
+      return this.$store.getters.productQuantity(this.product);
     },
   },
 
   methods: {
     closeDetail() {
       this.$emit("closeModel");
+    },
+    addToCart() {
+      this.$store.commit("addProduct", this.product);
+    },
+    removeCart() {
+      this.$store.commit("removeProduct", this.product);
     },
   },
 };

@@ -6,6 +6,15 @@
   <router-view />
 </template>
 
+<script>
+export default {
+  mounted() {
+    return this.$store.commit("getCartItems");
+  },
+};
+</script>
+
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
