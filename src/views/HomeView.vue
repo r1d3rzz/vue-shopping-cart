@@ -1,18 +1,23 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ProductSummary v-for="item in items" :key="item.id" :product="item" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import ProductSummary from "./ProductSummary.vue";
+import items from "../data/items";
 
 export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
-}
+  name: "HomeView",
+  components: { ProductSummary },
+  data() {
+    return {
+      items,
+    };
+  },
+};
 </script>
+
+<style scoped>
+</style>
